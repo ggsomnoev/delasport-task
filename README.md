@@ -8,8 +8,8 @@ This repository contains both a backend and frontend for the Delasport task 1, m
 
 ### Backend
 
-To set up and run the backend, please refer to the [README file in the `crud-api` directory](./crud-api/README.md).
+To set up and run the backend, please refer to the [README file in the crud-api directory](./crud-api/README.md).
 
 ### Frontend
 
-For the frontend, please refer to the [README file in the `delasport-task-main` directory](./delasport-task-main/README.md).
+For the frontend, please refer to the [README file in the delasport-task-main directory](./delasport-task-main/README.md).
