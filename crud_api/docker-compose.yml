@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  crudapidb:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: testuser
+      POSTGRES_PASSWORD: supersecret
+      POSTGRES_DB: delasporttask
+    ports:
+      - '5432:5432'
+    networks:
+      - crudapi-network
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U testuser -d delasporttask']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  crud-api:
+    build: .
+    depends_on:
+      crudapidb:
+        condition: service_healthy
+    working_dir: /crud_api
+    ports:
+      - '5000:5000'
+    networks:
+      - crudapi-network
+    volumes:
+      - .:/crud_api
+      - /node_modules
+
+volumes:
+  postgres_data:
+
+networks:
+  crudapi-network:
+    driver: bridge
