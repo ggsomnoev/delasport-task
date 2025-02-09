@@ -83,3 +83,10 @@ make db-seed
 ## Frontend
 
 The frontend for this project is located in the `delasport-task-main` directory. Please refer to the README file for more info.
+
+## Future Improvements
+
+1. Using **NestJS** could be the better option here (out-of-the-box clear structure, ease of writing tests, and many more benefits).
+2. Having tests is really important. It would have been great to have added unit tests, integration tests, e2e tests, performance tests, etc.
+3. Having **Redis** also for caching will be benefitial.
+4. Better code quality – linter/TypeScript errors, config parameters, etc.
