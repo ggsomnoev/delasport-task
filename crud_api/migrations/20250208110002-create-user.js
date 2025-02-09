@@ -35,7 +35,7 @@ module.exports = {
         allowNull: true,
       },
       contact_preference: {
-        type: Sequelize.ARRAY(Sequelize.STRING), // Changed to ARRAY of strings
+        type: Sequelize.ARRAY(Sequelize.STRING),
         allowNull: false,
         validate: {
           isArrayOfValidOptions(value) {
