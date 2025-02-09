@@ -37,7 +37,7 @@ const userController = {
       res.json({ users });
     } catch (error) {
       logger.error('Error fetching users:', error);
-      res.status(500).json({ success: false, error: 'Failed to fetch users' });
+      res.status(500).json({ error: 'Failed to fetch users' });
     }
   },
 
