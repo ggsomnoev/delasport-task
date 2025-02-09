@@ -33,7 +33,7 @@ Run migrations:
 make db-migrate
 ```
 
-Seed the database (if applicable):
+Seed the database:
 
 ```sh
 make db-seed
