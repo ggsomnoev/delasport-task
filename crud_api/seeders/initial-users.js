@@ -29,9 +29,9 @@ module.exports = {
         },
         {
           id: uuidv4(),
-          name: 'Braowee',
+          name: 'Bao',
           surname: 'Tzak',
-          email: 'braowee.tzak@philips.com',
+          email: 'bao.tzak@philips.com',
           age: 19,
           favorite_color: 'black',
           contact_preference: ['phone_call'],

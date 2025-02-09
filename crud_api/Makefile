@@ -51,7 +51,7 @@ docker-up:
 	$(DOCKER_COMPOSE) up -d
 
 .PHONY: docker-up-clean
-docker-up:
+docker-up-clean:
 	$(DOCKER_COMPOSE) down -v
 	$(DOCKER_COMPOSE) up --build -d
 

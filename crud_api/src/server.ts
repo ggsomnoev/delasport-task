@@ -1,6 +1,5 @@
 import express from 'express';
 import userRoutes from './routes/userRoutes';
-import errorHandler from './middleware/errorHandler';
 import { connectToDB } from './database/db';
 import logger from './utils/logger';
 import rateLimit from 'express-rate-limit';
@@ -8,7 +7,6 @@ import cors from 'cors';
 
 const app = express();
 app.use(express.json());
-app.use(errorHandler);
 
 const allowedOrigins = process.env.CORS_ORIGIN?.split(',') || [
   'http://localhost:3000',
@@ -19,14 +17,13 @@ app.use(
   })
 );
 
-// Max 100 requests per windowMs (1 min) per IP
-const someRateLimiter = rateLimit({
-  windowMs: 1 * 60 * 1000,
-  max: 100,
+const rateLimiter = rateLimit({
+  windowMs: 1 * 60 * 1000, // 1 min
+  max: 100, // 100 req per IP
   message: { error: 'Too many requests, please try again later.' },
 });
 
-app.use(someRateLimiter);
+app.use(rateLimiter);
 
 app.use('/users', userRoutes);
 
