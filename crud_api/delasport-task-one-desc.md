@@ -4,7 +4,7 @@
 
 1. Use a Docker image to run a database (you can choose the database).
 2. Create a table named `users` with the following fields:
-   a. `name`, `surname`, `email`, `age`, `favorite_color`, `contact_preference`.
+   - `name`, `surname`, `email`, `age`, `favorite_color`, `contact_preference`.
 3. Implement migrations.
 4. Add a unique email constraint.
 
@@ -12,16 +12,16 @@
 
 1. Set up a Node.js server using Express.js (or another framework of your choice).
 2. Implement the following API endpoints:
-   a. `POST /users` - Create a new user.
-   b. `GET /users` - Retrieve a list of users.
-   c. `PUT /users/:id` - Update a user by ID.
-   d. `DELETE /users/:id` - Delete a user by ID.
+   - `POST /users` - Create a new user.
+   - `GET /users` - Retrieve a list of users.
+   - `PUT /users/:id` - Update a user by ID.
+   - `DELETE /users/:id` - Delete a user by ID.
 
 ## Best Practices
 
 1. Use environment variables.
 2. Implement logging with Winston:
-   a. Use proper severity levels.
+   - Use proper severity levels.
 3. Implement error handling.
 
 ## Dockerization
